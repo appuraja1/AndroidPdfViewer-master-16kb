@@ -57,15 +57,21 @@ Licensed under Apache License 2.0.
 
 Add to _build.gradle_:
 
-```groovy
-allprojects {
-  repositories {
-   // ...
-    mavenCentral()
-   // ...
-  }
-}
+```gradle
+	dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			mavenCentral()
+			maven { url 'https://jitpack.io' }
+		}
+	}
 ```
+```gradle
+dependencies {
+	        implementation 'com.github.appuraja1:AndroidPdfViewer-master-16kb:Tag'
+	}
+
+ ```
 
 ## ProGuard
 If you are using ProGuard, add following rule to proguard config file:
