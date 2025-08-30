@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+
+android {
+    namespace = 'com.github.barteksc'
+    compileSdk = rootProject.tools.compileSdk
+
+    defaultConfig {
+        minSdk = rootProject.tools.minSdk
+        targetSdk = rootProject.tools.targetSdk
+        versionCode = 1
+        versionName = rootProject.tools.versionName
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    archiveClassifier.set('sources')
+    from android.sourceSets.main.java.srcDirs
+}
+
+// Create a dummy javadoc directory with a placeholder file
+file("$buildDir/docs/javadoc").mkdirs()
+file("$buildDir/docs/javadoc/index.html").text = "<html><body>Placeholder documentation</body></html>"
+
+task javadocJar(type: Jar) {
+    archiveClassifier.set('javadoc')
+    from file("${project.buildDir}/docs/javadoc")
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+dependencies {
+    implementation("androidx.core:core:1.17.0")
+    api "com.github.appuraja1:PdfiumAndroid-16kb:v2.4"
+}
+
+// Maven Publishing
+ext {
+    PUBLISH_GROUP_ID = 'io.github.oothp'
+    PUBLISH_VERSION = "${rootProject.tools.versionName}"
+    PUBLISH_ARTIFACT_ID = 'android-pdf-viewer'
+}
+
+apply from: "${rootProject.projectDir}/android-pdf-viewer/publish-mavencentral.gradle"

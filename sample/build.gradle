@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    namespace = 'com.github.shockwave.sample'
+    compileSdk = rootProject.tools.compileSdk
+
+    defaultConfig {
+        minSdk = rootProject.tools.minSdk
+        targetSdk = rootProject.tools.targetSdk
+        versionCode = 3
+        versionName = "${rootProject.tools.versionName}"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["androidManifestFile": "$projectDir/src/main/AndroidManifest.xml".toString()]
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation project(':android-pdf-viewer')
+    implementation("androidx.activity:activity:1.10.1")
+    implementation("androidx.appcompat:appcompat:1.7.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.2.1")
+}
