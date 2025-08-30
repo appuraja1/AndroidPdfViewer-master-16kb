@@ -74,7 +74,7 @@ Add to _build.gradle_:
 ```
 ```gradle
 dependencies {
-	        implementation 'com.github.appuraja1:AndroidPdfViewer-master-16kb:v2.4'
+	        implementation 'com.github.appuraja1:AndroidPdfViewer-master-16kb:v4.0'
 	}
 
  ```
