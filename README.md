@@ -23,7 +23,7 @@ Licensed under Apache License 2.0.
 * targetSdk 35
 * minSdk 21
 * uses updated pdfium-android with 16kb page size alignment
-* implementation("io.github.oothp:android-pdf-viewer:3.2.0-beta05")
+* implementation("com.github.appuraja1:PdfiumAndroid-16kb:v2.4")
 
 
 
@@ -31,11 +31,6 @@ Licensed under Apache License 2.0.
 * Change minimum SDK version to 19
 * Drop MIPS support
 * Update to Androidx
-* Switch pdfium-android to a [fork](https://github.com/mhiew/PdfiumAndroid) so we can disable jetifier
-
-## 3.2.0-beta.2
-* Fix a potential NPE due to out of sync render thread management [Pull Request](https://github.com/barteksc/AndroidPdfViewer/pull/824)
-* Update the sample app configuration so that it can compile [Pull Request](https://github.com/mhiew/AndroidPdfViewer/pull/2)
 
 ## What's new in 3.2.0-beta.1?
 * Merge PR #714 with optimized page load
@@ -71,8 +66,6 @@ allprojects {
   }
 }
 ```
-
-`implementation 'com.github.mhiew:android-pdf-viewer:3.2.0-beta.3'`
 
 ## ProGuard
 If you are using ProGuard, add following rule to proguard config file:
