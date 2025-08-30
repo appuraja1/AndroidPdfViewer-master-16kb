@@ -13,10 +13,16 @@ repo, where can be developed independently. Version 1.x uses different engine fo
 so if you don't like 2.x version, try 1.x.__
 
 Library for displaying PDF documents on Android, with `animations`, `gestures`, `zoom` and `double tap` support.
-It is based on [PdfiumAndroid](https://github.com/barteksc/PdfiumAndroid) for decoding PDF files. Works on API 11 (Android 3.0) and higher.
+It is based on [PdfiumAndroid]((https://github.com/appuraja1/PdfiumAndroid-16kb)) for decoding PDF files. Works on API 11 (Android 3.0) and higher.
 Licensed under Apache License 2.0.
 
-#
+### 2.4 
+
+* targetSdk 35
+* minSdk 21
+* uses updated pdfium-android with 16kb page size alignment
+* implementation("com.github.appuraja1:PdfiumAndroid-16kb:v2.4")
+
 
 ## 3.2.0-beta05 (27 May 2025)
 
@@ -68,7 +74,7 @@ Add to _build.gradle_:
 ```
 ```gradle
 dependencies {
-	        implementation 'com.github.appuraja1:AndroidPdfViewer-master-16kb:Tag'
+	        implementation 'com.github.appuraja1:AndroidPdfViewer-master-16kb:v2.4'
 	}
 
  ```
