@@ -1,4 +1,4 @@
-
+[![](https://jitpack.io/v/appuraja1/AndroidPdfViewer-master-16kb.svg)](https://jitpack.io/#appuraja1/AndroidPdfViewer-master-16kb)
 
 
 
